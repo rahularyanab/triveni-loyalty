@@ -45,7 +45,12 @@ function LoginScreen({ onLogin }) {
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-stone-50 via-orange-50/30 to-stone-100 px-4">
       <div className="w-full max-w-sm">
         <div className="text-center mb-8">
-          <img src="/logo.png" alt="Triveni Supermart" className="h-16 mx-auto mb-4" />
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl brand-gradient shadow-lg shadow-brand-500/25 mb-4">
+            <svg className="w-8 h-8 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h1 className="font-display text-2xl text-stone-800">Triveni Supermart</h1>
           <p className="text-stone-500 text-sm mt-1">Loyalty Points Admin</p>
         </div>
         <form onSubmit={handleSubmit} className="bg-white rounded-2xl shadow-sm border border-stone-100 p-6 space-y-4">
@@ -336,20 +341,25 @@ function Dashboard({ onLogout }) {
   return (
     <div className="min-h-screen bg-gradient-to-br from-stone-50 via-orange-50/20 to-stone-50">
       {/* Header */}
-      <header className="bg-white border-b border-stone-200 shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between">
+      <header className="brand-gradient">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
-            <img src="/logo.png" alt="Triveni Supermart" className="h-12" />
-          </div>
-          <div className="flex items-center gap-4">
-            <span className="text-xs text-stone-400 hidden sm:inline">Loyalty Dashboard</span>
-            <button onClick={onLogout} className="text-stone-400 hover:text-stone-700 text-sm flex items-center gap-1.5 transition-colors">
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+            <div className="w-9 h-9 rounded-xl bg-white/20 flex items-center justify-center">
+              <svg className="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1" />
               </svg>
-              Logout
-            </button>
+            </div>
+            <div>
+              <h1 className="text-white font-display text-lg leading-tight">Triveni Supermart</h1>
+              <p className="text-white/60 text-xs">Loyalty Dashboard</p>
+            </div>
           </div>
+          <button onClick={onLogout} className="text-white/60 hover:text-white text-sm flex items-center gap-1.5 transition-colors">
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
+            </svg>
+            Logout
+          </button>
         </div>
       </header>
 
