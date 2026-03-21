@@ -1,0 +1,29 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display&display=swap');
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: #faf8f5;
+  color: #1a1a1a;
+}
+
+.brand-gradient { background: linear-gradient(135deg, #ee7513 0%, #df5b09 50%, #b9430a 100%); }
+.stat-card { @apply bg-white rounded-2xl p-5 border border-stone-100 shadow-sm transition-all duration-200; }
+.stat-card:hover { @apply shadow-md -translate-y-0.5; }
+.table-row-hover:hover { @apply bg-brand-50/40; }
+input:focus, select:focus { @apply outline-none ring-2 ring-brand-400/30 border-brand-400; }
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #d6d3d1; border-radius: 3px; }
+
+@keyframes pulse-dot {
+  0%, 80%, 100% { transform: scale(0.6); opacity: 0.4; }
+  40% { transform: scale(1); opacity: 1; }
+}
+.loader-dot { animation: pulse-dot 1.4s infinite ease-in-out both; }
+.loader-dot:nth-child(1) { animation-delay: -0.32s; }
+.loader-dot:nth-child(2) { animation-delay: -0.16s; }
